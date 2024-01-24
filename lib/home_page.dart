@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,8 +25,19 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Column(
                       children: [
-                        Icon(Icons.security,),
-                        Text("PIN LOGIN"),
+                        Icon(
+                          Icons.security,
+                          size: 50.0,
+                        ),
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        Text(
+                          "PIN LOGIN",
+                          style: GoogleFonts.notoSansThai(
+                            fontSize: 18.0,
+                          ),
+                        ),
                       ],
                     )
                   ],
@@ -58,7 +70,7 @@ class _HomePageState extends State<HomePage> {
           // Handle tap on each digit if needed
         },
         child: Container(
-          width: 40,
+          width: 12,
           height: 40,
           // margin: EdgeInsets.symmetric(horizontal: 2),
           child: Center(
@@ -72,7 +84,8 @@ class _HomePageState extends State<HomePage> {
     );
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: pinWidgets,
     );
   }
@@ -108,11 +121,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(
             value,
-            style: TextStyle(fontSize: 18, color: Colors.black),
+            style: TextStyle(
+                fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
           Text(
             _getNumberWord(value),
-            style: TextStyle(fontSize: 14, color: Colors.black),
+            style: TextStyle(fontSize: 10, color: Colors.black),
           ),
         ],
       );
